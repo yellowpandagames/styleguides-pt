@@ -1,4 +1,4 @@
-# Índice
+## Índice
 
 - [Nomenclatura](#nomenclatura)
 
@@ -48,7 +48,7 @@
 
 - [Referências e Inspirações](#referencias)
 
-# Nomenclatura <a id="nomenclatura"></a>
+## Nomenclatura <a id="nomenclatura"></a>
 
 Quando se trata de nomenclatura, em geral, devem ser seguidos as convenções da
 linguagem C# porém algumas exceções se aplicam. Segue uma tabela a qual resume o
@@ -79,7 +79,7 @@ estilo das nomenclaturas utilizadas:
 
 `+` Membros públicos
 
-## Namespaces <a id="nomeclatura-namespaces"></a>
+### Namespaces <a id="nomeclatura-namespaces"></a>
 
 Utilizar **PascalCase** , sendo a única exceção acrônimos, como UI ou HUD, os quais
 podem ser em caixa alta.
@@ -96,11 +96,11 @@ PREFIRA:
 namespace YellowPanda.MazeGame.HUD.Healthbar
 ```
 
-## Tipos <a id="nomeclatura-tipos"></a>
+### Tipos <a id="nomeclatura-tipos"></a>
 
 Todos os tipos são escritos em alguma variação de **PascalCase**.
 
-### Classes e Structs
+#### Classes e Structs
 
 Escritos em **PascalCase** utilizando substantivos ou frases nominais:
 
@@ -110,7 +110,7 @@ class RadialSlider {}
 class GameManager {}
 ```
 
-### Interfaces
+#### Interfaces
 
 Escritos em **PascalCase** com o prefixo **I** , utilizando principalmente adjetivos
 e ocasionalmente frases nominais ou substantivos:
@@ -124,13 +124,13 @@ interface IPrintable {}
 💡 Ao nomear uma interface com substantivos ou frases nominais pode ser um indicativo
 que esta poderia ser melhor representada por uma classe abstrata.
 
-### Eventos
+#### Eventos
 
    // Work In Progress
 
 ~~Escritos em **PascalCase**~~
 
-### Enumerações (enum)
+#### Enumerações (enum)
 
 Escritos em **PascalCase** com nomes no singular. Enums são somente nomeados no plural
 quando seus valores são sinalizadores (Flags). **Não** utilize sufixos e prefixos
@@ -154,7 +154,7 @@ enum SwitchState {}
 enum Layers {}
 ```
 
-### Delegados
+#### Delegados
 
 Escritos em **PascalCase** + sufixo de acordo com seus usos:
 
@@ -178,7 +178,7 @@ delegate void TaskCompletedCallback();
 delegate void TaskFailedCallback();
 ```
 
-### Outros tipos comuns
+#### Outros tipos comuns
 
 | **Tipo da Base** | **Nomenclatura<br>da Derivação** | **Exemplo** |
 | ---------------- | -------------------------------- | ---------------------- |
@@ -188,7 +188,7 @@ delegate void TaskFailedCallback();
 | IEnumerable<br>ICollection<br>IList<br>IEnumerable\<T><br>ICollection\<T><br>IList\<T> | Sufixo &quot;**Collection**&quot; | DinosaurNamesCollection |
 | System.Exception | Sufixo &quot;**Exception**&quot; | DataCorruptedException |
 
-## Métodos <a id="nomeclatura-metodos"></a>
+### Métodos <a id="nomeclatura-metodos"></a>
 
 Escritos em **PascalCase** utilizando frases verbais:
 
@@ -197,7 +197,7 @@ void DoSomething() {}
 void DamagePlayer() {}
 ```
 
-## Campos <a id="nomeclatura-campos"></a>
+### Campos <a id="nomeclatura-campos"></a>
 
 Escritos diferentemente dependendo de seus modificadores de acesso:
 
@@ -238,7 +238,7 @@ public int MyPublicVariable;
 private int _myPrivateVariable;
 ```
 
-### Coleções
+#### Coleções
 
 Campos de coleções são escritos no plural:
 
@@ -249,7 +249,7 @@ List<Player> players;
 EnemyCollection enemies;
 ```
 
-## Propriedades <a id="nomeclatura-propriedades"></a>
+### Propriedades <a id="nomeclatura-propriedades"></a>
 
 Todas as propriedades são escritas em **PascalCase** , independentemente do seu
 modificador de acesso:
@@ -259,7 +259,7 @@ public int TotalPageCount { get; }
 private int PageIndex { get; set; }
 ```
 
-## Parâmetros <a id="nomeclatura-parametros"></a>
+### Parâmetros <a id="nomeclatura-parametros"></a>
 
 Escritos em **camelCase** :
 
@@ -284,9 +284,9 @@ void Bhaskara(float a, float b, float c)
 Vector2(float x, float y)
 ```
 
-## Teste Unitário (Unit Testing) <a id="nomeclatura-testes"></a>
+### Teste Unitário (Unit Testing) <a id="nomeclatura-testes"></a>
 
-### Classes
+#### Classes
 
 Escritas em **PascalCase** + sufixo **Tests** :
 
@@ -295,7 +295,7 @@ class CarTests {}
 class PlayerMovementTests {}
 ```
 
-### Métodos
+#### Métodos
 
 Escritos em **PascalCase** + prefixo **Should\_** + infixo **\_When\_** (pode ser 
 substituído por outras palavras como &quot;After&quot; ou &quot;Before&quot;):
@@ -315,9 +315,9 @@ O nome de um teste deve ser baseado na _feature_ a ser testada. O prefixo **Shou
 é importante já que reforça a forma como os testes unitários devem ser escritos. 
 Já o infixo **\_When\_** separa o comportamento, do estado em teste.
 
-## Outros <a id="nomeclatura-outros"></a>
+### Outros <a id="nomeclatura-outros"></a>
 
-### Abreviações
+#### Abreviações
 
 Para abreviações com 3 caracteres ou mais deve se utilizar **PascalCasing**
 (para 2 caracteres podem ser escritos em caixa alta):
@@ -356,7 +356,7 @@ XmlDocument xmlDocument;
 UrlHelper UrlHelper;
 ```
 
-### Claridade
+#### Claridade
 
 Utilize o máximo de palavras possíveis até que o propósito de um membro esteja
 claro (porém devem ser evitados pleonasmos ou redundâncias):
@@ -382,7 +382,7 @@ void ResetPosition();
 void KillPlayer(Player player);
 ```
 
-### Números
+#### Números
 
 Uma boa prática para nomear números é utilizar adjetivos como &quot;Maximum&quot; (max),
 &quot;Minimum&quot; (min), &quot;Total&quot;. Trocar a palavra &quot;Number&quot; 
@@ -404,7 +404,7 @@ int totalPageCount;
 int secretPagesCount;
 ```
 
-### Ambiguidade
+#### Ambiguidade
 
 No exemplo a seguir &quot;secretPages&quot; pode ser interpretado pelo leitor
 tanto como a quantidade de páginas secretas quanto uma coleção de páginas secretas.
@@ -432,9 +432,9 @@ int SpecialPagesCount;
 int PlayerCount { get { return players.Length; } }
 ```
 
-# Declarações <a id="declaracoes-disposicao"></a>
+## Declarações <a id="declaracoes-disposicao"></a>
 
-## Disposição
+### Disposição
 
 Prefira uma declaração por linha.
 
@@ -451,11 +451,11 @@ string username;
 string password;
 ```
 
-## Tipos <a id="declaracoes-tipos"></a>
+### Tipos <a id="declaracoes-tipos"></a>
 
 Um tipo por arquivo (salvo o uso de tipos aninhados).
 
-## Modificadores de acesso <a id="declaracoes-modificadores-de-acesso"></a>
+### Modificadores de acesso <a id="declaracoes-modificadores-de-acesso"></a>
 
 Modificadores de acesso são explícitos para tipos, métodos e variáveis de membro.
 
@@ -489,13 +489,13 @@ internal class Player
 }
 ```
 
-## Tipos implícitos <a id="declaracoes-tipos-implicitos"></a>
+### Tipos implícitos <a id="declaracoes-tipos-implicitos"></a>
 
 var
 
-# Espaçamento <a id="espacamento"></a>
+## Espaçamento <a id="espacamento"></a>
 
-## Comprimento de Linha <a id="espacamento-comprimento-de-linha"></a>
+### Comprimento de Linha <a id="espacamento-comprimento-de-linha"></a>
 
 O número máximo de caracteres por linha é de **85 caracteres**.
 
@@ -504,7 +504,7 @@ auxiliar na detecção de linhas longas, como réguas verticais ou quebras
 de linha automáticas ([VSCode](https://stackoverflow.com/a/29972073/8140034),
 [VS](https://marketplace.visualstudio.com/items?itemName=PaulHarrington.EditorGuidelines)).
 
-## Indentação <a id="espacamento-identacao"></a>
+### Indentação <a id="espacamento-identacao"></a>
 
 A indentação é feita através de **espaços**.
 
@@ -512,7 +512,7 @@ A indentação é feita através de **espaços**.
 caso seja necessário ([VSCode](https://stackoverflow.com/a/29972553/8140034),
 [VS](https://stackoverflow.com/a/14167067/8140034)).
 
-### Blocos
+#### Blocos
 
 Indentação em blocos são de **4 espaços** :
 
@@ -523,7 +523,7 @@ if (true)
 }
 ```
 
-### Alinhamento
+#### Alinhamento
 
 Quando necessário, argumentos devem ser alinhados um por linha, sendo o primeiro
 argumento na mesma linha da invocação ou declaração:
@@ -540,7 +540,7 @@ float[,] GenerateNoiseMap(int mapWidth,                                         
                           float lacunarity);                                        //
 ```
 
-### Quebras de Linha
+#### Quebras de Linha
 
 Indentação em quebras de linha são de **4 espaços** :
 
@@ -616,7 +616,7 @@ if (JumpPressed && canJump)
 }
 ```
 
-## Espaçamento Vertical <a id="espacamento-vertical"></a>
+### Espaçamento Vertical <a id="espacamento-vertical"></a>
 
 ✔️ Utilize somente **uma** linha em branco separando métodos.
 
@@ -625,7 +625,7 @@ if (JumpPressed && canJump)
 💡 Um método com muitas seções talvez signifique que este deva ser refatorado em
 múltiplos métodos.
 
-# Estilo de Corpo { } <a id="estilo-de-corpo"></a>
+## Estilo de Corpo { } <a id="estilo-de-corpo"></a>
 
 Cada chave possui sua própria linha, uma convenção da língua C#:
 
@@ -683,11 +683,11 @@ if (someTest)
 }
 ```
 
-# Instruções Switch <a id="switchs"></a>
+## Instruções Switch <a id="switchs"></a>
 
 Switch()
 
-# Ordem de Membros <a id="ordem"></a>
+## Ordem de Membros <a id="ordem"></a>
 
 Dentro de uma classe, estrutura ou interface:
 
@@ -741,12 +741,12 @@ A ordem completa para métodos é a seguinte:
 10. private
 1. aaaaa
 
-# Língua <a id="lingua"></a>
+## Língua <a id="lingua"></a>
 
 Utilize **inglês** (en-US/en-UK) para escrever código. Comentários podem ser escritos
 tanto em **inglês** (en-US/en-UK) quanto em **português** (pt-BR).
 
-# Direitos Autorais <a id="direitos-autorais"></a>
+## Direitos Autorais <a id="direitos-autorais"></a>
 
 Coloque o seguinte trecho no início de cada arquivo escrito pela Yellow Panda Games:
 
@@ -756,7 +756,7 @@ Coloque o seguinte trecho no início de cada arquivo escrito pela Yellow Panda G
 /// </copyright>
 ```
 
-# Referências e Inspirações <a id="referencias"></a>
+## Referências e Inspirações <a id="referencias"></a>
 
 Este guia foi baseado em convenções de C#, Unity e também em diversos outros guias de estilos:
 
